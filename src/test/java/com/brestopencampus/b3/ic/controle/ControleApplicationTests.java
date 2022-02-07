@@ -9,7 +9,7 @@ class ControleApplicationTests {
 	@Test
 	void contextLoads() {
 		//un test 
-		System.out.println("Hello There!")
+		System.out.println("Hello There!");
 	}
 
 }
