@@ -6,10 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ControleApplicationTests {
 
-	@Test
-	void contextLoads() {
-		//un test 
-		re-oups
-	}
+    @Test
+    void contextLoads() {
+        //un test
+        System.out.println("coucou");
+    }
 
 }
