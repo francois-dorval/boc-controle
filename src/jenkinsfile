@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+ 
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "MBOC"
+        jdk "openjdk-11"
+    }
+    stages {
+        stage('Build') {
+            steps {
+
+                checkout([$class: 'GitSCM', branches: [[name: '*/esteban']],
+                userRemoteConfigs: [[url: 'https://github.com/estebanLavaux/boc-B3-controle.git']]])
+ 
+                sh "mvn clean verify"
+            }
+        }
+    }
+}
