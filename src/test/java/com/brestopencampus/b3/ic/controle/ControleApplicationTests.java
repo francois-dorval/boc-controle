@@ -9,7 +9,6 @@ class ControleApplicationTests {
 	@Test
 	void contextLoads() {
 		//un test 
-		re-oups
 	}
 
 }
