@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    tools {
+        maven "MBOC"
+        jdk "openjdk-11"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                git branch: 'master', url: 'https://github.com/alexisrollando/boc-B3-controle.git'
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+
+            post {
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+    }
+}
