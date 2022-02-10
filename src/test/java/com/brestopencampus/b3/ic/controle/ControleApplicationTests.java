@@ -10,3 +10,4 @@ class ControleApplicationTests {
 	void contextLoads() {
 	}
 }
+}
