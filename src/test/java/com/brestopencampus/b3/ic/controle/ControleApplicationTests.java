@@ -8,6 +8,8 @@ class ControleApplicationTests {
 
 	@Test
 	void contextLoads() {
-	}
-}
+        //un test
+        System.out.println("test");
+    }
 
+}
