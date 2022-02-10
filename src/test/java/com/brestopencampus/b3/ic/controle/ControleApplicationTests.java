@@ -9,3 +9,4 @@ class ControleApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+}
