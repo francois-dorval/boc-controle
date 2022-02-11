@@ -1,0 +1,37 @@
+//Je suis parti d'un template directement proposer par Jenkins
+pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "MBOC"
+        jdk "openjdk-11"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/TheFanch/boc-B3-controle'
+
+                // Run Maven on a Unix agent.
+                //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                //commande plus simple
+                sh "mvn clean verify"
+
+                // To run Maven on a Windows agent, use
+                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+
+            //post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                //success {
+                    // J'ais essayer de lancer les Test du projet, mais ils sembles vide et ne pas fonctionner
+                    // junit 'src/test/java/com/brestopencampus/b3/ic/controle/ControleApplicationTests.java'
+                    // archiveArtifacts 'package/*.jar'
+                //}
+           // }
+        }
+    }
+}
