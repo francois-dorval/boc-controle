@@ -1,0 +1,22 @@
+ pipeline {
+    agent any
+    
+    tools {
+        maven 'MBOC'
+        jdk 'jdk11'
+    }
+    
+    stages {
+        stage('Checkout du projet') {
+            steps {
+                git branch: 'master', url: 'https://github.com/Steven29200/boc-controle'
+            }
+        }
+        
+        stage('Build Maven') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
