@@ -15,4 +15,3 @@ public class ControleApplication {
 
 
 
-🥸 ceci est une erreur
